@@ -1,0 +1,15 @@
+[Unit]
+Description=TemplateService
+ConditionPathExists=/home/alex18
+[Service]
+Type=forking
+PIDFile=/home/alex18/agent.pid
+User=alex18
+Group=alex18
+WorkingDirectory=/home/alex18
+ExecStart=/home/alex18/main
+Restart=on-failure
+RestartSec=60
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=alex18
